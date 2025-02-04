@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Inventarios</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Inicio de Sesión</h2>
+        <form id="loginForm" onsubmit="return validateLogin()">
+            <label for="username">Usuario:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+    </div>
+
+    <div class="dashboard" id="dashboard" style="display:none;">
+        <h2>Sistema de Inventarios</h2>
+        <div class="menu">
+            <select id="inventoryMenu" onchange="showInventory()">
+                <option value="">Seleccionar Acción</option>
+                <option value="addItem">Agregar Producto</option>
+                <option value="viewItems">Ver Productos</option>
+                <option value="editItem">Editar Producto</option>
+            </select>
+        </div>
+
+        <div id="addItemForm" class="form" style="display:none;">
+            <h3>Agregar Producto</h3>
+            <form>
+                <label for="itemName">Nombre del Producto:</label>
+                <input type="text" id="itemName">
+                <label for="itemQuantity">Cantidad:</label>
+                <input type="number" id="itemQuantity">
+                <button type="submit">Agregar</button>
+            </form>
+        </div>
+
+        <div id="viewItemsList" class="form" style="display:none;">
+            <h3>Lista de Productos</h3>
+            <ul id="itemsList">
+                <!-- Aquí se agregarían los productos -->
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
